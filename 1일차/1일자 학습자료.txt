@@ -1,0 +1,32 @@
+## 1일차 교육 ###
+1. python 개요 및 설치완료 테스트
+
+2. 변수, 출력 문 연습
+
+3. 제어문 연습(if, for)
+
+4. function 연습
+
+5. 종합 실습 : 장비 컨피그(기가오피스) 출력하는 function 만들기
+
+* 참고 컨피그 : 아래 컨피그를 출력할 수 있어야 한다.
+
+/configure service vprn 1201 customer 1 create
+/configure service vprn 1201 customer 1 description "##02191111-1111, kt##"
+/configure service vprn 1201 customer 1 route-distinguisher 125.141.249.195:1201
+/configure service vprn 1201 customer 1 interface "vlan-1201" create
+/configure service vprn 1201 customer 1 interface "vlan-1201" enable-ingress-stats
+/configure service vprn 1201 customer 1 interface "vlan-1201" address 192.168.1.254
+/configure service vprn 1201 customer 1 interface "vlan-1201" icmp no mask-reply
+/configure service vprn 1201 customer 1 interface "vlan-1201" icmp no redirects
+/configure service vprn 1201 customer 1 interface "vlan-1201" icmp no unreachables
+/configure service vprn 1201 customer 1 interface "vlan-1201" icmp no ttl-expired
+/configure service vprn 1201 customer 1 interface "vlan-1201" sap lag-:1201 create
+/configure service vprn 1201 customer 1 interface "vlan-1201" sap lag-:1201 ingress qos 500
+/configure service vprn 1201 customer 1 interface "vlan-1201" sap lag-:1201 ingress filter ip 101
+/configure service vprn 1201 customer 1 interface "vlan-1201" sap lag-:1201 egress qos 500
+/configure service vprn 1201 customer 1 grt-lookup enable-grt
+/configure service vprn 1201 customer 1 grt-lookup enable-grt static-route 0.0.0.0/0 grt
+/configure service vprn 1201 customer 1 grt-lookup enable-grt "VPRN_to_Global"
+/configure service vprn 1201 customer 1 grt-lookup export-limit 20
+/configure service vprn 1201 customer 1 no shutdown
