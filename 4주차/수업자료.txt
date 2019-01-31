@@ -1,4 +1,4 @@
-config = """
+
 router static
  address-family ipv4 unicast
   0.0.0.0/0 61.78.49.241
@@ -12,7 +12,7 @@ router static
   14.51.64.0/18 Null0 tag 9260
   14.51.224.0/19 Null0 tag 9260
   59.14.0.0/16 Null0 tag 9260
-"""
+
 
 
 Uiwang-EXP038# show ip int br
