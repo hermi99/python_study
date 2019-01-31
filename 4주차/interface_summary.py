@@ -1,77 +1,6 @@
-----------  정규식 -------------------
-**** 정규식 테스트 사이튼 : https://regex101.com/
+import re
 
-# 1. 문자 클래스
-# \d = [0-9]
-# 문자 : [a-z] [A-Z]
-# \w : [a-zA-Z0-9]
-# \s whitespace : [ \t\n\r]
-# . : 모든문자(\n만 제외)
-
-# 2. 반복
-# + : 1 이상 => [0-9]+ : 숫자가 1자리 이상
-# * : 0 이상 [0-9]+ : 숫자가 없거나 1자리 이상
-# ? : 0 또는 1 : [0-9]? : 숫자가 1자리 없거나 있거나
-#
-# {x} : x번 반복
-# {x, y} : x~y번 반복
-# {x, } : x번 이상 반복
-
-# + => {1, } : [0-9]{1,}
-# * => {0, } : [0-9]{0,}
-# ? => {0,1} :: [0-9]{0,1}
-
-# 3. 검색
-# match() : 문자열의 처음부분이 정규식과 매치(일지)하는지 확인한다.
-# search() : 문자열 전체를 검사하여 정규식과 일치하는지 확인한다.
-# findall() : 정규식과 매치되는 모든 문자열(substring)을 리스트로 반환한다.
-# finditer() : 정규식과 매치되는 모든 문자열(substring)을 iterator 객체로 반환한다.
-
-
-# 4. match
-# 매칭결과를 리턴하는 오브젝트
-# 매칭결과를 group 메쏘드로 확인 할 수 있음
-# search, finditer로 검색시 사용가능
-# group(0) : 검색된 전체
-# group(x) : 패턴에서 지정한 그룹 번호
-# 그룹지정은 ()로
-# ex) "hello\s+(world)" => group(0) 는 전체, group(1)은 world
-
-
-
-
-
-router static
- address-family ipv4 unicast
-  0.0.0.0/0 61.78.49.241
-  14.34.64.0/18 Null0 tag 9260
-  14.35.0.0/19 Null0 tag 9260
-  14.35.192.0/20 Null0 tag 9260
-  14.36.216.0/21 Null0 tag 9260
-  14.36.224.0/20 Null0 tag 9260
-  14.36.240.0/21 Null0 tag 9260
-  14.38.192.0/18 Null0 tag 9260
-  14.51.64.0/18 Null0 tag 9260
-  14.51.224.0/19 Null0 tag 9260
-  59.14.0.0/16 Null0 tag 9260
-
-
-
-Uiwang-EXP038# show ip int br
- IFNAME   LPROTO IP-ADDRESS         SIP POLICY-NAME
-------------------------------------------------------------
- vlan11   up     121.170.126.9/30       rate_50M
- vlan14   up     112.170.144.85/30      rate_10M
- vlan24   up     221.163.99.37/30       rate_50M
- vlan31   up     221.163.99.205/30      rate_50M
- vlan34   up     121.170.126.105/30     rate_50M
- vlan71   up     112.189.154.38/30      security_filter
- vlan72   up     112.189.154.90/30      security_filter
- eth0     up     192.168.0.1/24  
- 
- 
- 
- 
+content = """
 interface vlan11
  description ##ts(117-2585)## 
  cpu-mac-filter multicast
@@ -201,8 +130,23 @@ interface vlan64
  cpu-mac-filter multicast
  cpu-mac-filter broadcast
 !
+"""
 
+p = re.compile(r"interface\s+[\w]+(?:\n.+)*?\n!")
+interface_configs = p.findall(content)
 
-   
- 
- 
+print(interface_configs[0])
+
+for config in interface_configs:
+    pattern = r"""
+        interface\s+([\w]+)    # interface vlan63
+        (?:\n.+)*?           # 모든 라인
+        \n\s+(?:description\s+(.*)\s*)* # description bugok(117-2427)
+        (?:\n.+)*?           # 모든 라인
+        \n!                  # !(종료)
+        """
+    p = re.compile(pattern, re.VERBOSE)
+    m = p.search(config)
+    if m:
+        print(m.group(1))
+        print(m.group(2))
