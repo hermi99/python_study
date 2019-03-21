@@ -1,2 +1,7 @@
 linenum_check = QRegExpValidator(QRegExp("[\d]{8}-[\d]{4}"))
 self.text_line_num.setValidator(linenum_check)
+
+# 고객명은 영문만 허용
+reg_ex = QRegExp("[A-Za-z0-9_\`\~\!\@\#\$\%\^\&\*\(\)\-\=\+\\\{\}\[\]\'\"\;\:\<\,\>\.\?\/\s]*")
+custNameValidator = QRegExpValidator(reg_ex)
+self.textCustName.setValidator(custNameValidator)
