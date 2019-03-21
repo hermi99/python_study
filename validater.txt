@@ -1,0 +1,2 @@
+linenum_check = QRegExpValidator(QRegExp("[\d]{8}-[\d]{4}"))
+self.text_line_num.setValidator(linenum_check)
