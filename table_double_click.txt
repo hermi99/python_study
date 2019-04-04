@@ -1,0 +1,2 @@
+self.equip_listview_goc1.clicked[QModelIndex].connect(self.goc1_equip_selected)
+self.port_tableview_goc1.doubleClicked[QModelIndex].connect(self.goc1_port_dobule_clicked)
