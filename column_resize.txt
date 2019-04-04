@@ -1,0 +1,14 @@
+    def resize_headers_goc2(self):
+        # column 크기조절 옵션
+        header = self.table_test.horizontalHeader()
+
+        widths = {1: 150, 2: 70, 3: 30, 4: 90}
+        for index in range(len(goc2_header)):
+            if widths.get(index):
+                header.resizeSection(index, widths[index])
+            else:
+                header.resizeSection(index, 80)
+        # self.table_test.resizeRowsToContents()
+
+        header.setStyleSheet("QHeaderView { font-size: 10pt; }")
+        header.setStyleSheet("color: rgb(255, 170, 0)")
