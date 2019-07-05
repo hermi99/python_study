@@ -1,0 +1,20 @@
+port∏Ì,IP¡÷º“,Link Status
+FastEthernet0/0,211.107.85.60,up
+FastEthernet0/1,192.168.0.100,up
+FastEthernet1/0,10.1.1.1,up
+FastEthernet1/1,10.1.1.5,up
+FastEthernet1/2,10.1.1.9,up
+FastEthernet1/3,10.1.1.13,up
+FastEthernet1/4,10.1.1.17,up
+FastEthernet1/5,10.1.1.21,up
+FastEthernet1/6,10.1.1.25,up
+FastEthernet1/7,10.1.1.29,up
+FastEthernet1/8,unassigned,down
+FastEthernet1/9,unassigned,down
+FastEthernet1/10,unassigned,down
+FastEthernet1/11,unassigned,down
+FastEthernet1/12,unassigned,down
+FastEthernet1/13,unassigned,down
+FastEthernet1/14,unassigned,down
+FastEthernet1/15,unassigned,down
+Vlan1,unassigned,down

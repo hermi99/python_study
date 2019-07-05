@@ -1,0 +1,742 @@
+        ies 1 customer 1 create
+            interface "To-MEA068" create
+                description "## Anyang-MEA068 LACP LAG16(tge3/2/5) Active ##"
+                address 112.189.154.146/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap lag-1 create
+                exit
+            exit
+            interface "To-MEA069" create
+                description "## Anyang-MEA069 LACP LAG16(tge3/2/5) Active ##"
+                address 112.189.154.150/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap lag-2 create
+                exit                  
+            exit
+            interface "ge1/1/15" create
+                description "## 02190140-2581, kyunggi bisan3, 10M##"
+                address 221.163.99.217/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/15 create
+                    ingress
+                        qos 10
+                        filter ip 100
+                    exit
+                    egress
+                        qos 10
+                    exit
+                exit
+            exit
+            interface "ge1/1/17" create
+                description "## 02190140-0659, anyangsangho, 50M##"
+                address 211.226.16.129/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/17 create
+                    ingress
+                        qos 50
+                        filter ip 100
+                    exit
+                    egress
+                        qos 50
+                    exit
+                exit
+            exit
+            interface "ge1/1/19" create
+                description "## 02190140-2423, delicious english, 20M##"
+                address 211.226.16.121/30
+                icmp
+                    no mask-reply
+                    no redirects      
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/19 create
+                    ingress
+                        qos 20
+                        filter ip 100
+                    exit
+                    egress
+                        qos 20
+                    exit
+                exit
+            exit
+            interface "ge1/1/21" create
+                description "## 02190140-2464, kyoboseangmyung, 20M##"
+                address 112.170.144.89/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/21 create
+                    ingress
+                        qos 20
+                        filter ip 100
+                    exit
+                    egress
+                        qos 20
+                    exit
+                exit
+            exit
+            interface "ge1/1/23" create
+                description "## 02190140-2584, sinseageaINC(Emart), 10M##"
+                address 112.170.144.145/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/23 create
+                    ingress
+                        qos 10
+                        filter ip 100 
+                    exit
+                    egress
+                        qos 10
+                    exit
+                exit
+            exit
+            interface "ge3/1/13" create
+                description "## 02180000-7517, Highfield-Middle, 1G,OFD#15-39.40 ##"
+                address 211.226.16.109/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/13 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/15" create
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/15 create
+                    ingress
+                        qos 30
+                        filter ip 100
+                    exit
+                    egress
+                        qos 30
+                    exit
+                exit
+            exit
+            interface "ge3/1/17" create
+                description "## 02180000-3874,gumgang(innertel),100m##"
+                address 112.170.144.225/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables   
+                    no ttl-expired
+                exit
+                sap 3/1/17 create
+                    ingress
+                        qos 100
+                        filter ip 100
+                    exit
+                    egress
+                        qos 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/19" create
+                description "## 02180000-4062, anyang(innertel),100m ##"
+                address 112.170.144.229/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/19 create
+                    ingress
+                        qos 100
+                        filter ip 100
+                    exit
+                    egress
+                        qos 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/21" create
+                description "## 02180000-7049, intertop_cp123,100m  ##"
+                address 220.94.204.45/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/21 create
+                    ingress
+                        qos 500
+                        filter ip 100
+                    exit              
+                    egress
+                        qos 500
+                    exit
+                exit
+            exit
+            interface "ge3/1/23" create
+                description "## 02190140-2479, comandc, 100m ##"
+                address 221.163.99.201/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/23 create
+                    ingress
+                        qos 100
+                        filter ip 100
+                    exit
+                    egress
+                        qos 100
+                    exit
+                exit
+            exit
+            interface "ge1/2/5" create
+                description "## 02180000-4063, anyang_muyuck(innertel),1G ##"
+                address 112.170.144.221/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/5 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge1/2/7" create
+                description "## 02190110-2576, anyangpyengseang, down500m,up200m ##"
+                address 121.170.126.101/30
+                icmp
+                    no mask-reply
+                    no redirects      
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/7 create
+                    ingress
+                        qos 200
+                        filter ip 100
+                    exit
+                    egress
+                        qos 500
+                    exit
+                exit
+            exit
+            interface "ge1/2/9" create
+                description "## 02190140-2454, samhwapaint, 100m ##"
+                address 112.170.144.93/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/9 create
+                    ingress
+                        qos 100
+                        filter ip 100
+                    exit
+                    egress
+                        qos 100
+                    exit
+                exit
+            exit
+            interface "ge1/2/11" create
+                description "## 02190140-2469, actsolution, 1G ##"
+                address 112.170.144.105/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/11 create
+                    ingress
+                        filter ip 100
+                    exit              
+                exit
+            exit
+            interface "ge3/2/7" create
+                description "##  02190140-2585, itlink(gumgang),300m ##"
+                address 221.163.99.165/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/2/7 create
+                    ingress
+                        qos 300
+                        filter ip 100
+                    exit
+                    egress
+                        qos 300
+                    exit
+                exit
+            exit
+            interface "ge3/2/9" create
+                description "##  02190140-2585, itlink(gumgang),500m ##"
+                address 221.163.99.193/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/2/9 create
+                    ingress
+                        qos 500
+                        filter ip 100
+                    exit
+                    egress
+                        qos 500
+                    exit
+                exit
+            exit
+            interface "ge3/2/1" create
+                description "##seoyeon(02190140-2475_3/2/1)##"
+                address 211.226.16.25/30
+                icmp
+                    no mask-reply     
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/2/1 create
+                    ingress
+                        qos 200
+                        filter ip 100
+                    exit
+                    egress
+                        qos 200
+                    exit
+                exit
+            exit
+            interface "ge1/1/1" create
+                description "##yabeskei,02190140-0574,Tie11-111,112, 031-478-3300##"
+                address 112.170.144.101/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/1 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/1" create
+                description "## NonghuyupYutongCenter_02190105-2415,(500M) ##"
+                address 112.170.144.41/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/1 create
+                    ingress
+                        qos 500
+                        filter ip 100
+                    exit
+                    egress
+                        qos 500       
+                    exit
+                exit
+            exit
+            interface "ge1/1/3" create
+                description "## 02190140-2457, O-biz_low_act, 1G##"
+                address 112.170.144.49/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/3 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge1/1/5" create
+                description "## 02190140-2458, O-biz_high_act, 1G##"
+                address 112.170.144.57/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/5 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/3" create
+                description "## 02190140-2459, O-biz_low_stb, 1G##"
+                address 112.170.144.53/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/3 create
+                    ingress
+                        filter ip 100 
+                    exit
+                exit
+            exit
+            interface "ge3/1/5" create
+                description "## 02190140-2460, O-biz_high_stb, 1G##"
+                address 112.170.144.61/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/5 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge1/2/1" create
+                description "## kyobo-jeungkwon, 02190117-0075, 500M ##"
+                address 121.170.126.69/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/1 create
+                    ingress
+                        qos 500
+                        filter ip 100
+                    exit
+                    egress
+                        qos 500
+                    exit
+                exit
+            exit
+            interface "ge3/2/21" create
+                description "## 02190140-0012,game-inners,1G ##"
+                address 221.163.99.181/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired    
+                exit
+                sap 3/2/21 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge3/2/19" create
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/2/19 create
+                    ingress
+                        qos 500
+                        filter ip 100
+                    exit
+                    egress
+                        qos 500
+                    exit
+                exit
+            exit
+            interface "ge3/2/3" create
+                description "## NonghuyupIT,02190140-0014,(300M) ##"
+                address 221.163.99.49/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/2/3 create
+                    ingress
+                        qos 300
+                        filter ip 100
+                    exit
+                    egress
+                        qos 300
+                    exit
+                exit
+            exit
+            interface "ge1/1/10" create
+                description "## Central,02190140-2467, 100M ##"
+                address 221.163.99.81/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/10 create
+                    ingress
+                        qos 100
+                        filter ip 100
+                    exit
+                    egress
+                        qos 100
+                    exit
+                exit
+            exit
+            interface "ge3/1/2" create
+                description "## GMB_Korea,02190140-2435, 30M ##"
+                address 121.170.126.49/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 3/1/2 create
+                    ingress
+                        qos 30
+                        filter ip 100
+                    exit
+                    egress
+                        qos 30
+                    exit
+                exit
+            exit
+            interface "ge1/1/2" create
+                description "## 02190140-0039,anyang-gumsaso, 50M ##"
+                address 211.226.16.213/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit                  
+                sap 1/1/2 create
+                    ingress
+                        qos 50
+                        filter ip 100
+                    exit
+                    egress
+                        qos 50
+                    exit
+                exit
+            exit
+            interface "ge1/2/3" create
+                description "##02190140-0063, KumhoTire, 1G,OFD11-121,122##"
+                address 221.163.99.33/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/3 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge1/2/23" create
+                description "## 02190117-0065, Hyundae_Auto, 1G ##"
+                address 112.170.144.245/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/2/23 create
+                    ingress
+                        filter ip 100
+                    exit
+                exit
+            exit
+            interface "ge1/1/8" create
+                description "## Seoyon,02190140-2576, 20M ##"
+                address 211.226.16.97/30
+                icmp
+                    no mask-reply     
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/8 create
+                    ingress
+                        qos 20
+                        filter ip 100
+                    exit
+                    egress
+                        qos 20
+                    exit
+                exit
+            exit
+            interface "ge1/1/12" create
+                description "## sunjin,02190140-2578, 200M ##"
+                address 112.170.144.185/30
+                icmp
+                    no mask-reply
+                    no redirects
+                    no unreachables
+                    no ttl-expired
+                exit
+                sap 1/1/12 create
+                    ingress
+                        qos 200
+                        filter ip 100
+                    exit
+                    egress
+                        qos 200
+                    exit
+                exit
+            exit
+
+			
+#--------------------------------------------------
+echo "Static Route Configuration"
+#--------------------------------------------------
+        static-route 14.35.204.0/24 next-hop 112.170.144.50 tag 700
+        static-route 14.35.204.0/24 next-hop 112.170.144.54 metric 100 tag 700
+        static-route 14.35.205.0/24 next-hop 112.170.144.58 tag 700
+        static-route 14.35.205.0/24 next-hop 112.170.144.62 metric 100 tag 700
+        static-route 14.51.226.128/26 next-hop 211.226.16.14 tag 700
+        static-route 14.51.226.192/26 next-hop 211.226.16.14 tag 700
+        static-route 14.51.232.0/24 next-hop 211.226.16.102 tag 700
+        static-route 14.51.233.0/24 next-hop 211.226.16.110 tag 700
+        static-route 14.51.236.0/24 next-hop 211.226.16.114 tag 700
+        static-route 14.51.237.0/24 next-hop 221.163.99.182 tag 700
+        static-route 59.14.63.0/24 next-hop 61.79.121.130 tag 700
+        static-route 59.14.81.0/24 next-hop 221.163.99.194 tag 700
+        static-route 59.14.82.0/24 next-hop 119.207.97.210 tag 700
+        static-route 59.14.116.0/25 next-hop 220.94.204.46 tag 700
+        static-route 61.77.17.0/26 next-hop 221.163.99.202 tag 700
+        static-route 61.77.193.128/25 next-hop 220.94.204.86 tag 700
+        static-route 61.79.142.0/25 next-hop 119.207.97.170 tag 700
+        static-route 61.83.136.96/27 next-hop 211.226.16.54 tag 700
+        static-route 61.83.168.128/26 next-hop 221.163.99.82 tag 700
+        static-route 112.170.131.128/27 next-hop 112.170.144.146 tag 700
+        static-route 112.170.131.160/27 next-hop 211.226.16.98 tag 700
+        static-route 117.17.210.0/24 next-hop 222.121.105.98 tag 270
+        static-route 117.17.211.0/24 next-hop 222.121.105.98 tag 270
+        static-route 117.17.212.0/22 next-hop 222.121.105.98 tag 270
+        static-route 117.17.216.0/22 next-hop 222.121.105.98 tag 270
+        static-route 118.36.4.0/24 next-hop 221.163.99.166 tag 700
+        static-route 118.36.61.128/26 next-hop 221.163.99.166 tag 700
+        static-route 119.196.248.0/24 next-hop 112.170.144.186 tag 9260
+        static-route 119.207.121.0/24 next-hop 121.170.126.102 tag 700
+        static-route 119.207.126.0/24 next-hop 221.163.99.194 tag 700
+        static-route 121.139.5.0/24 next-hop 112.170.144.106 tag 700
+        static-route 121.139.37.128/25 next-hop 221.163.99.202 tag 700
+        static-route 121.139.86.0/24 next-hop 221.163.99.166 tag 700
+        static-route 121.139.101.208/29 next-hop 112.170.144.90 tag 700
+        static-route 121.139.104.192/26 next-hop 211.226.16.182 tag 700
+        static-route 121.190.153.64/28 next-hop 121.170.126.134 tag 700
+        static-route 121.190.165.32/27 next-hop 112.170.144.50 tag 700
+        static-route 121.190.165.32/27 next-hop 112.170.144.54 metric 100 tag 700
+        static-route 121.190.165.176/28 next-hop 211.226.16.202 tag 700
+        static-route 125.128.40.64/26 next-hop 221.163.99.234 tag 9260
+        static-route 128.134.187.64/26 next-hop 112.170.144.50 tag 700
+        static-route 128.134.187.64/26 next-hop 112.170.144.54 metric 100 tag 700
+        static-route 128.134.187.128/26 next-hop 112.170.144.58 tag 700
+        static-route 128.134.187.128/26 next-hop 112.170.144.62 metric 100 tag 700
+        static-route 175.196.232.0/24 next-hop 112.170.144.106 tag 700
+        static-route 175.196.233.0/24 next-hop 112.170.144.106 tag 700
+        static-route 175.196.234.0/24 next-hop 112.170.144.106 tag 700
+        static-route 175.196.235.0/24 next-hop 112.170.144.106 tag 700
+        static-route 175.212.202.64/26 next-hop 112.170.144.50 tag 700
+        static-route 175.212.202.64/26 next-hop 112.170.144.54 metric 100 tag 700
+        static-route 183.101.48.0/25 next-hop 220.94.204.42 tag 700
+        static-route 183.101.48.128/25 next-hop 221.163.99.166 tag 700
+        static-route 183.111.143.0/25 next-hop 221.163.99.70 tag 9260
+        static-route 183.111.143.128/25 next-hop 211.226.16.242 tag 9260
+        static-route 183.111.152.0/27 next-hop 221.163.99.86 tag 9260
+        static-route 183.111.152.32/27 next-hop 211.226.16.62 tag 9260
+        static-route 203.232.185.0/24 next-hop 222.121.105.98 tag 270
+        static-route 210.110.54.0/23 next-hop 222.121.105.98 tag 270
+        static-route 210.223.52.0/25 next-hop 119.207.97.90 tag 9260
+        static-route 211.41.16.0/24 next-hop 112.170.144.222 tag 250
+        static-route 211.41.18.0/24 next-hop 112.170.144.226 tag 250
+        static-route 211.52.19.0/24 next-hop 112.170.144.230 tag 250
+        static-route 211.52.20.0/24 next-hop 112.170.144.222 tag 250
+        static-route 211.195.123.160/28 next-hop 221.163.99.218 tag 700
+        static-route 211.197.210.0/27 next-hop 112.170.144.186 tag 700
+        static-route 211.198.60.0/24 next-hop 61.79.121.170 tag 700
+        static-route 211.198.64.104/29 next-hop 222.121.105.98 tag 700
+        static-route 211.221.175.0/25 next-hop 119.207.97.218 tag 700
+        static-route 211.226.99.0/24 next-hop 121.170.126.38 tag 700
+        static-route 220.67.111.0/24 next-hop 222.121.105.98 tag 270
+        static-route 220.74.38.48/29 next-hop 112.170.144.146 tag 700
+        static-route 220.78.114.0/24 next-hop 112.170.144.94 tag 9260
+        static-route 221.147.216.128/27 next-hop 112.170.144.50 tag 700
+        static-route 221.147.216.128/27 next-hop 112.170.144.54 metric 100 tag 700
+        static-route 221.147.216.224/27 next-hop 112.170.144.58 tag 700
+        static-route 221.147.216.224/27 next-hop 112.170.144.62 metric 100 tag 700
+        static-route 221.147.221.0/25 next-hop 221.163.99.150 tag 700
+        static-route 221.153.103.128/28 next-hop 211.226.16.214 tag 700
+        static-route 221.153.103.168/29 next-hop 112.170.144.94 tag 700
+        static-route 222.98.242.64/26 next-hop 222.121.105.98 tag 700
+        static-route 222.99.83.128/26 next-hop 121.170.126.50 tag 700
+        static-route 222.99.100.0/27 next-hop 211.226.16.130 tag 700
+        static-route 222.117.28.64/27 next-hop 211.226.16.114 tag 700
+        static-route 222.117.61.128/27 next-hop 112.170.144.106 tag 700
+        static-route 222.117.95.160/27 next-hop 211.226.16.114 tag 700
+        static-route 222.117.102.32/27 next-hop 211.226.16.102 tag 700
+        static-route 222.117.126.224/27 next-hop 211.226.16.110 tag 700
+        static-route 222.121.129.128/25 next-hop 220.94.204.206 tag 700
+        static-route 222.121.135.64/27 next-hop 211.226.16.102 tag 700
+        static-route 222.121.135.128/27 next-hop 211.226.16.110 tag 700
+        static-route 222.121.135.224/27 next-hop 211.226.16.114 tag 700
+        static-route 222.121.147.0/25 next-hop 211.226.16.122 tag 700
+#--------------------------------------------------			
+			
+			
